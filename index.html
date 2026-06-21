@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>東初富学園｜公式ホームページ</title>
+  <style>
+    :root {
+      --navy: #062452;
+      --blue: #0b4f8a;
+      --gold: #b58a2a;
+      --light: #f5f8fc;
+      --white: #ffffff;
+      --text: #1d2b3a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.8;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.94);
+      border-bottom: 1px solid #d9e2ef;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: .08em;
+      font-size: 20px;
+    }
+
+    .nav a {
+      color: var(--navy);
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.95), rgba(255,255,255,.68)),
+        radial-gradient(circle at 82% 28%, rgba(245,190,67,.35), transparent 24%),
+        linear-gradient(135deg, #ffffff 0%, #eef5fb 60%, #dceaf7 100%);
+    }
+
+    .hero-inner { max-width: 900px; }
+
+    .eyebrow {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: .22em;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(48px, 9vw, 112px);
+      letter-spacing: .18em;
+      line-height: 1.1;
+    }
+
+    .kana {
+      color: var(--navy);
+      letter-spacing: 2.2em;
+      font-size: 14px;
+      margin-left: 1.7em;
+    }
+
+    .catch {
+      margin-top: 28px;
+      color: var(--navy);
+      font-size: clamp(18px, 3vw, 28px);
+      font-weight: 700;
+    }
+
+    .lead {
+      margin: 24px auto 0;
+      max-width: 760px;
+      font-size: 17px;
+      color: #34495e;
+    }
+
+    .btns {
+      margin-top: 36px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: .05em;
+    }
+
+    .btn.primary { background: var(--navy); color: white; }
+    .btn.secondary { border: 1px solid var(--navy); color: var(--navy); background: white; }
+
+    section {
+      padding: 76px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--navy);
+      margin-bottom: 38px;
+    }
+
+    .section-title span {
+      color: var(--gold);
+      letter-spacing: .18em;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 6px 0 0;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: .08em;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid #d9e2ef;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 12px 28px rgba(6,36,82,.08);
+    }
+
+    .symbol {
+      display: grid;
+      place-items: center;
+      min-height: 320px;
+      background: linear-gradient(160deg, #f9fbff, #edf5fc);
+    }
+
+    .emblem {
+      width: 220px;
+      height: 220px;
+      border: 8px solid var(--navy);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-size: 50px;
+      font-weight: 700;
+      position: relative;
+      background: white;
+    }
+
+    .emblem::before {
+      content: "☀";
+      position: absolute;
+      top: 22px;
+      color: var(--gold);
+      font-size: 48px;
+    }
+
+    .emblem small {
+      position: absolute;
+      bottom: 34px;
+      font-size: 12px;
+      letter-spacing: .12em;
+      color: var(--gold);
+    }
+
+    .concept-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .concept-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .circle {
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--navy);
+      color: white;
+      font-weight: 700;
+    }
+
+    .roles {
+      background: var(--light);
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .role-card {
+      background: white;
+      border: 1px solid #d9e2ef;
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .role-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(6,36,82,.12);
+    }
+
+    .icon {
+      font-size: 36px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .name {
+      font-size: 24px;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .position {
+      display: inline-block;
+      margin: 8px 0 14px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f3e8c7;
+      color: #6c4c00;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .role-card p {
+      margin: 0;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .phase {
+      background: white;
+      border: 1px solid #d9e2ef;
+      border-top: 6px solid var(--blue);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .phase strong {
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .phase span {
+      display: block;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 34px 20px;
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .role-grid { grid-template-columns: repeat(2, 1fr); }
+      .roadmap-grid { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      section { padding: 56px 16px; }
+      .hero { min-height: 70vh; padding: 64px 16px; }
+      .kana { letter-spacing: 1.1em; margin-left: 1em; }
+      .role-grid { grid-template-columns: 1fr; }
+      .card { padding: 22px; }
+      .emblem { width: 180px; height: 180px; font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">東初富学園</div>
+      <nav class="nav-links">
+        <a href="#about">学校紹介</a>
+        <a href="#roles">役職紹介</a>
+        <a href="#roadmap">ロードマップ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">学校法人・学校名のご提案</div>
+        <h1>東初富学園</h1>
+        <div class="kana">とうしょふがくえん</div>
+        <div class="catch">東の未来を拓き、初めの一歩を踏み出し、富む心を育てる学び舎</div>
+        <p class="lead">
+          「東」は未来・希望・広がりを、「初」ははじまり・挑戦・初心を、「富」は豊かさ・実り・幸せを象徴します。
+          3つの想いを一つに結び、次代を担う人材を育成する学園を目指します。
+        </p>
+        <div class="btns">
+          <a class="btn primary" href="#about">学校紹介を見る</a>
+          <a class="btn secondary" href="#roles">創設メンバーを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <span>ABOUT</span>
+          <h2>学校紹介</h2>
+        </div>
+        <div class="about-grid">
+          <div class="card symbol">
+            <div class="emblem">東初富<small>TOSHOFU GAKUEN</small></div>
+          </div>
+          <div class="card">
+            <h3>校章のコンセプト</h3>
+            <div class="concept-list">
+              <div class="concept-item"><div class="circle">東</div><div><strong>日の出</strong><br>東から昇る太陽は、未来・希望・広がりを表します。</div></div>
+              <div class="concept-item"><div class="circle">初</div><div><strong>道</strong><br>まっすぐに伸びる道は、はじまりの一歩・挑戦・学びの歩みを表します。</div></div>
+              <div class="concept-item"><div class="circle">富</div><div><strong>富士山と稲穂</strong><br>高い志と不変の価値、豊かさ・実り・感謝の心を表します。</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roles" class="roles">
+      <div class="container">
+        <div class="section-title">
+          <span>FOUNDERS</span>
+          <h2>創設者と役職紹介</h2>
+        </div>
+        <div class="role-grid">
+          <div class="role-card"><div class="icon">🏫</div><div class="name">宮園</div><div class="position">施設・キャンパス整備</div><p>キャンパス計画、建築・設備管理、行政手続き、環境整備を担当します。</p></div>
+          <div class="role-card"><div class="icon">🔬</div><div class="name">筧</div><div class="position">研究・産学連携</div><p>研究戦略の策定、産学連携の推進、外部研究資金の獲得を担当します。</p></div>
+          <div class="role-card"><div class="icon">📣</div><div class="name">中丸</div><div class="position">広報・ブランド戦略</div><p>ブランド戦略、PR戦略、学生募集、入試広報、地域連携を担当します。</p></div>
+          <div class="role-card"><div class="icon">👔</div><div class="name">榊</div><div class="position">理事長</div><p>全体統括、意思決定、法人運営、長期ビジョン策定を担当します。</p></div>
+          <div class="role-card"><div class="icon">🎓</div><div class="name">清水</div><div class="position">学長候補・教育統括</div><p>教育理念、学部・学科設計、カリキュラム構築、教員採用を担当します。</p></div>
+          <div class="role-card"><div class="icon">💻</div><div class="name">佐伯</div><div class="position">IT部門・DX推進</div><p>IT戦略、システム要件整理、ネットワーク設計、DX推進を担当します。</p></div>
+          <div class="role-card"><div class="icon">📈</div><div class="name">富田</div><div class="position">財務・資金戦略</div><p>資金計画、調達方法の検討、寄付金募集、収支シミュレーションを担当します。</p></div>
+          <div class="role-card"><div class="icon">🧹</div><div class="name">きのこ</div><div class="position">清掃員</div><p>校内清掃、美化活動、備品管理補助、快適なキャンパス環境維持を担当します。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="container">
+        <div class="section-title">
+          <span>ROADMAP</span>
+          <h2>大学設立までのロードマップ</h2>
+        </div>
+        <div class="roadmap-grid">
+          <div class="phase"><span>フェーズ1</span><strong>構想策定</strong><p>大学設立構想と基本方針を具体化します。</p></div>
+          <div class="phase"><span>フェーズ2</span><strong>学校法人設立</strong><p>法人設立、認可申請、組織体制を整備します。</p></div>
+          <div class="phase"><span>フェーズ3</span><strong>大学建設</strong><p>キャンパス建設と教育体制を構築します。</p></div>
+          <div class="phase"><span>フェーズ4</span><strong>開学準備</strong><p>学生募集、設備確認、システム稼働を進めます。</p></div>
+          <div class="phase"><span>フェーズ5</span><strong>開学</strong><p>新大学の開学と新たな歴史の始まりです。</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    私たちは、未来をつくる教育を、東から世界へ届けます。<br>
+    © 東初富学園
+  </footer>
+</body>
+</html>
