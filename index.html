@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Toshofu International School｜Official Website</title>
+  <title>Toshofu International University｜Official Website</title>
+  <meta name="description" content="Toshofu International University（TIU）の公式デモサイト。国際教育、テクノロジー、経済・国際情勢を学び、世界とつながる力を育てる大学。" />
   <style>
     :root {
       --navy: #062452;
       --blue: #0b4f8a;
-      --sky: #dcecff;
+      --deep-blue: #031a3d;
+      --sky: #e7f1ff;
       --gold: #b58a2a;
+      --light-gold: #f5ead0;
       --light: #f5f8fc;
       --white: #ffffff;
       --text: #1d2b3a;
-      --muted: #5f7084;
+      --muted: #627386;
+      --border: #d9e2ef;
+      --shadow: 0 18px 42px rgba(6, 36, 82, .10);
     }
 
     * { box-sizing: border-box; }
@@ -22,38 +27,65 @@
 
     body {
       margin: 0;
-      font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
       color: var(--text);
       background: var(--white);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", Georgia, serif;
       line-height: 1.8;
       overflow-x: hidden;
     }
 
+    a { color: inherit; }
+
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(255,255,255,.92);
-      border-bottom: 1px solid #d9e2ef;
-      backdrop-filter: blur(10px);
+      z-index: 50;
+      background: rgba(255, 255, 255, .92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     .nav {
-      max-width: 1180px;
+      max-width: 1220px;
       margin: 0 auto;
-      padding: 14px 20px;
+      padding: 14px 22px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      justify-content: space-between;
+      gap: 18px;
     }
 
     .brand {
-      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
       color: var(--navy);
-      letter-spacing: .08em;
-      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      line-height: 1.2;
       white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--navy);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      background: linear-gradient(145deg, #fff, #eef5ff);
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: inset 0 0 0 3px #fff;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: .18em;
+      margin-top: 2px;
     }
 
     .nav-right {
@@ -62,60 +94,67 @@
       gap: 18px;
     }
 
-    .nav a {
-      color: var(--navy);
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a {
       text-decoration: none;
-      margin-left: 20px;
+      color: var(--navy);
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
       position: relative;
     }
 
-    .nav a::after {
+    .nav-links a::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -5px;
+      bottom: -7px;
       width: 0;
       height: 2px;
       background: var(--gold);
       transition: width .25s ease;
     }
 
-    .nav a:hover::after { width: 100%; }
+    .nav-links a:hover::after { width: 100%; }
 
     .lang-switch {
       border: 1px solid #c9d7e8;
-      background: white;
+      background: var(--white);
       color: var(--navy);
       border-radius: 999px;
       padding: 8px 14px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
-      transition: transform .2s ease, box-shadow .2s ease;
+      transition: transform .22s ease, box-shadow .22s ease;
+      white-space: nowrap;
     }
 
     .lang-switch:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(6,36,82,.12);
+      box-shadow: 0 10px 22px rgba(6, 36, 82, .13);
     }
 
     .hero {
-      min-height: 82vh;
+      min-height: 88vh;
+      position: relative;
       display: grid;
       place-items: center;
+      padding: 96px 22px 82px;
       text-align: center;
-      padding: 86px 20px;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,.97), rgba(255,255,255,.73)),
-        radial-gradient(circle at 82% 26%, rgba(245,190,67,.35), transparent 23%),
-        radial-gradient(circle at 10% 15%, rgba(11,79,138,.16), transparent 26%),
-        linear-gradient(135deg, #ffffff 0%, #eef5fb 58%, #dceaf7 100%);
-      position: relative;
       overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.98), rgba(255,255,255,.76)),
+        radial-gradient(circle at 86% 24%, rgba(181,138,42,.34), transparent 24%),
+        radial-gradient(circle at 12% 20%, rgba(11,79,138,.15), transparent 26%),
+        linear-gradient(135deg, #ffffff 0%, #eef6ff 54%, #dcecff 100%);
     }
 
-    .hero::before, .hero::after {
+    .hero::before,
+    .hero::after {
       content: "";
       position: absolute;
       border-radius: 50%;
@@ -124,19 +163,40 @@
     }
 
     .hero::before {
-      width: 280px;
-      height: 280px;
-      left: -90px;
-      bottom: 40px;
+      width: 340px;
+      height: 340px;
+      left: -130px;
+      bottom: 42px;
     }
 
     .hero::after {
-      width: 180px;
-      height: 180px;
+      width: 190px;
+      height: 190px;
       right: 8%;
-      top: 18%;
+      top: 20%;
       animation-delay: 1.8s;
     }
+
+    .globe-line {
+      position: absolute;
+      width: 680px;
+      height: 680px;
+      border: 1px solid rgba(6,36,82,.08);
+      border-radius: 50%;
+      right: -260px;
+      bottom: -260px;
+    }
+
+    .globe-line::before,
+    .globe-line::after {
+      content: "";
+      position: absolute;
+      inset: 78px;
+      border: 1px solid rgba(6,36,82,.08);
+      border-radius: 50%;
+    }
+
+    .globe-line::after { inset: 170px; }
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
@@ -144,80 +204,105 @@
     }
 
     .hero-inner {
-      max-width: 950px;
+      max-width: 1040px;
       position: relative;
       z-index: 1;
       animation: fadeUp .75s ease both;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     .eyebrow {
       color: var(--gold);
-      font-weight: 700;
+      font-weight: 900;
       letter-spacing: .22em;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
     h1 {
       margin: 0;
       color: var(--navy);
-      font-size: clamp(42px, 8vw, 104px);
-      letter-spacing: .16em;
-      line-height: 1.12;
+      font-size: clamp(44px, 8vw, 104px);
+      letter-spacing: .06em;
+      line-height: 1.05;
     }
 
-    .kana {
+    .abbr {
+      margin-top: 14px;
       color: var(--navy);
-      letter-spacing: 2.2em;
+      font-weight: 900;
+      letter-spacing: .32em;
       font-size: 14px;
-      margin-left: 1.7em;
     }
 
     .catch {
-      margin-top: 28px;
+      margin-top: 30px;
       color: var(--navy);
-      font-size: clamp(18px, 3vw, 28px);
-      font-weight: 700;
+      font-size: clamp(19px, 3vw, 30px);
+      font-weight: 900;
     }
 
     .lead {
-      margin: 24px auto 0;
-      max-width: 780px;
-      font-size: 17px;
+      max-width: 820px;
+      margin: 22px auto 0;
       color: #34495e;
+      font-size: 17px;
     }
 
     .btns {
-      margin-top: 36px;
       display: flex;
-      gap: 14px;
       justify-content: center;
       flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 38px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 24px;
+      padding: 13px 26px;
       border-radius: 999px;
       text-decoration: none;
-      font-weight: 700;
-      letter-spacing: .05em;
-      transition: transform .2s ease, box-shadow .2s ease;
+      font-weight: 900;
+      letter-spacing: .04em;
+      transition: transform .22s ease, box-shadow .22s ease;
     }
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 26px rgba(6,36,82,.16);
+      box-shadow: 0 14px 30px rgba(6,36,82,.16);
     }
 
     .btn.primary { background: var(--navy); color: white; }
     .btn.secondary { border: 1px solid var(--navy); color: var(--navy); background: white; }
 
-    section { padding: 78px 20px; }
+    .stats {
+      max-width: 980px;
+      margin: 46px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(217,226,239,.9);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 12px 28px rgba(6,36,82,.07);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--navy);
+      font-size: 26px;
+      line-height: 1.2;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section { padding: 82px 22px; }
 
     .container {
       max-width: 1180px;
@@ -227,63 +312,72 @@
     .section-title {
       text-align: center;
       color: var(--navy);
-      margin-bottom: 38px;
+      margin-bottom: 42px;
     }
 
     .section-title span {
       color: var(--gold);
       letter-spacing: .18em;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 900;
     }
 
     h2 {
-      margin: 6px 0 0;
-      font-size: clamp(28px, 4vw, 42px);
-      letter-spacing: .08em;
+      margin: 7px 0 0;
+      font-size: clamp(29px, 4vw, 44px);
+      letter-spacing: .06em;
+      line-height: 1.25;
+    }
+
+    h3 {
+      color: var(--navy);
+      margin-top: 0;
+      line-height: 1.5;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: .92fr 1.08fr;
       gap: 28px;
       align-items: stretch;
     }
 
     .card {
       background: var(--white);
-      border: 1px solid #d9e2ef;
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 12px 28px rgba(6,36,82,.08);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: var(--shadow);
     }
 
     .symbol {
       display: grid;
       place-items: center;
-      min-height: 320px;
-      background: linear-gradient(160deg, #f9fbff, #edf5fc);
+      min-height: 360px;
+      background:
+        radial-gradient(circle at 70% 24%, rgba(181,138,42,.14), transparent 22%),
+        linear-gradient(160deg, #fbfdff, #edf5fc);
     }
 
     .emblem {
-      width: 220px;
-      height: 220px;
+      width: 230px;
+      height: 230px;
       border: 8px solid var(--navy);
       border-radius: 50%;
       display: grid;
       place-items: center;
       color: var(--navy);
-      font-size: 50px;
-      font-weight: 700;
+      font-size: 56px;
+      font-weight: 900;
       position: relative;
       background: white;
-      box-shadow: inset 0 0 0 6px #eef4fb;
+      box-shadow: inset 0 0 0 6px #eef4fb, 0 20px 40px rgba(6,36,82,.12);
     }
 
     .emblem::before {
       content: "☀";
       position: absolute;
-      top: 22px;
+      top: 18px;
       color: var(--gold);
       font-size: 48px;
     }
@@ -291,7 +385,9 @@
     .emblem small {
       position: absolute;
       bottom: 34px;
-      font-size: 12px;
+      max-width: 160px;
+      line-height: 1.2;
+      font-size: 11px;
       letter-spacing: .12em;
       color: var(--gold);
     }
@@ -309,58 +405,61 @@
     }
 
     .circle {
-      flex: 0 0 42px;
-      width: 42px;
-      height: 42px;
+      flex: 0 0 44px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       display: grid;
       place-items: center;
       background: var(--navy);
       color: white;
-      font-weight: 700;
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(6,36,82,.18);
     }
 
     .international {
       background:
-        linear-gradient(180deg, #ffffff, #f5f8fc),
-        radial-gradient(circle at top right, rgba(181,138,42,.18), transparent 22%);
+        radial-gradient(circle at top right, rgba(181,138,42,.14), transparent 24%),
+        linear-gradient(180deg, #ffffff, #f5f8fc);
     }
 
     .global-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 18px;
     }
 
     .global-card {
       background: white;
-      border: 1px solid #d9e2ef;
-      border-radius: 18px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
       padding: 24px;
       position: relative;
       overflow: hidden;
-      transition: transform .22s ease, box-shadow .22s ease;
+      transition: transform .24s ease, box-shadow .24s ease;
+      min-height: 280px;
     }
 
     .global-card::before {
       content: "";
       position: absolute;
-      width: 90px;
-      height: 90px;
-      right: -28px;
-      top: -28px;
+      width: 96px;
+      height: 96px;
+      right: -32px;
+      top: -32px;
       border-radius: 50%;
       background: rgba(11,79,138,.08);
     }
 
     .global-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 28px rgba(6,36,82,.12);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
     }
 
     .global-icon {
       font-size: 34px;
       color: var(--gold);
+      margin-bottom: 10px;
     }
 
     .roles { background: var(--light); }
@@ -373,49 +472,51 @@
 
     .role-card {
       background: white;
-      border: 1px solid #d9e2ef;
-      border-radius: 16px;
-      padding: 22px 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 18px;
       text-align: center;
-      transition: transform .2s, box-shadow .2s;
+      transition: transform .22s ease, box-shadow .22s ease;
     }
 
     .role-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(6,36,82,.12);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
     }
 
     .icon {
       font-size: 36px;
-      color: var(--gold);
       margin-bottom: 10px;
     }
 
     .name {
       font-size: 24px;
       color: var(--navy);
-      font-weight: 700;
+      font-weight: 900;
     }
 
     .position {
       display: inline-block;
       margin: 8px 0 14px;
-      padding: 4px 10px;
+      padding: 4px 11px;
       border-radius: 999px;
-      background: #f3e8c7;
+      background: var(--light-gold);
       color: #6c4c00;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 900;
     }
 
     .role-card p {
       margin: 0;
       text-align: left;
       font-size: 14px;
+      color: #34495e;
     }
 
     .news {
-      background: linear-gradient(135deg, #062452, #0b4f8a);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(255,255,255,.12), transparent 24%),
+        linear-gradient(135deg, var(--deep-blue), var(--blue));
       color: white;
     }
 
@@ -423,8 +524,8 @@
     .news .section-title span { color: #e4c169; }
 
     .news-note {
-      max-width: 880px;
-      margin: -16px auto 34px;
+      max-width: 900px;
+      margin: -18px auto 36px;
       color: #dcecff;
       text-align: center;
       font-size: 14px;
@@ -437,28 +538,28 @@
     }
 
     .news-card {
-      background: rgba(255,255,255,.96);
+      background: rgba(255,255,255,.97);
       color: var(--text);
-      border-radius: 18px;
-      padding: 24px;
-      min-height: 230px;
-      transition: transform .22s ease, box-shadow .22s ease;
+      border-radius: 20px;
+      padding: 25px;
+      min-height: 250px;
+      transition: transform .24s ease, box-shadow .24s ease;
       border-top: 5px solid var(--gold);
     }
 
     .news-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 32px rgba(0,0,0,.22);
+      transform: translateY(-6px);
+      box-shadow: 0 18px 34px rgba(0,0,0,.25);
     }
 
     .news-tag {
       display: inline-block;
-      padding: 4px 10px;
+      padding: 4px 11px;
       border-radius: 999px;
       background: #edf4ff;
       color: var(--blue);
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 900;
       margin-bottom: 10px;
     }
 
@@ -466,43 +567,51 @@
       color: var(--muted);
       font-size: 13px;
       margin-bottom: 8px;
+      font-weight: 700;
     }
 
     .roadmap-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 14px;
+      position: relative;
     }
 
     .phase {
       background: white;
-      border: 1px solid #d9e2ef;
+      border: 1px solid var(--border);
       border-top: 6px solid var(--blue);
-      border-radius: 14px;
-      padding: 20px;
+      border-radius: 18px;
+      padding: 22px 18px;
       text-align: center;
-      transition: transform .22s ease;
+      transition: transform .22s ease, box-shadow .22s ease;
+      box-shadow: 0 10px 24px rgba(6,36,82,.06);
     }
 
-    .phase:hover { transform: translateY(-5px); }
-
-    .phase strong {
-      color: var(--navy);
-      font-size: 20px;
+    .phase:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
     }
 
     .phase span {
       display: block;
       color: var(--gold);
-      font-weight: 700;
+      font-weight: 900;
       margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .phase strong {
+      display: block;
+      color: var(--navy);
+      font-size: 20px;
     }
 
     footer {
       background: var(--navy);
       color: white;
       text-align: center;
-      padding: 34px 20px;
+      padding: 38px 20px;
       letter-spacing: .08em;
     }
 
@@ -515,8 +624,8 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .65s ease, transform .65s ease;
+      transform: translateY(20px);
+      transition: opacity .7s ease, transform .7s ease;
     }
 
     .reveal.is-visible {
@@ -524,55 +633,88 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 980px) {
-      .about-grid { grid-template-columns: 1fr; }
-      .role-grid { grid-template-columns: repeat(2, 1fr); }
-      .roadmap-grid { grid-template-columns: 1fr; }
-      .global-grid { grid-template-columns: 1fr; }
-      .news-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1; transform: none; }
     }
 
-    @media (max-width: 560px) {
-      section { padding: 56px 16px; }
-      .hero { min-height: 72vh; padding: 64px 16px; }
-      .kana { letter-spacing: 1.1em; margin-left: 1em; }
-      .role-grid { grid-template-columns: 1fr; }
-      .card { padding: 22px; }
-      .emblem { width: 180px; height: 180px; font-size: 40px; }
+    @media (max-width: 1100px) {
+      .global-grid { grid-template-columns: repeat(2, 1fr); }
+      .role-grid { grid-template-columns: repeat(2, 1fr); }
+      .roadmap-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 920px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .news-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .stats { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
       .nav { padding: 12px 14px; }
-      .brand { font-size: 17px; }
+      .brand { font-size: 14px; }
+      .brand-mark { width: 36px; height: 36px; font-size: 12px; }
+      .lang-switch { padding: 7px 11px; font-size: 12px; }
+      .hero { min-height: 78vh; padding: 70px 16px 62px; }
+      h1 { letter-spacing: .02em; }
+      .abbr { letter-spacing: .18em; }
+      section { padding: 58px 16px; }
+      .card { padding: 22px; }
+      .global-grid { grid-template-columns: 1fr; }
+      .role-grid { grid-template-columns: 1fr; }
+      .emblem { width: 184px; height: 184px; font-size: 44px; }
+      .emblem small { bottom: 26px; font-size: 9px; }
+      .emblem::before { top: 14px; font-size: 38px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="nav">
-      <div class="brand" data-ja="Toshofu International School" data-en="Toshofu International School">Toshofu International School</div>
+      <div class="brand">
+        <div class="brand-mark">TIU</div>
+        <div>
+          <span data-ja="Toshofu International University" data-en="Toshofu International University">Toshofu International University</span>
+          <small data-ja="GLOBAL UNIVERSITY PROJECT" data-en="GLOBAL UNIVERSITY PROJECT">GLOBAL UNIVERSITY PROJECT</small>
+        </div>
+      </div>
+
       <div class="nav-right">
-        <nav class="nav-links">
-          <a href="#about" data-ja="学校紹介" data-en="About">学校紹介</a>
-          <a href="#international" data-ja="国際教育" data-en="Global">国際教育</a>
-          <a href="#roles" data-ja="役職紹介" data-en="Founders">役職紹介</a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#about" data-ja="大学紹介" data-en="About">大学紹介</a>
+          <a href="#international" data-ja="国際教育" data-en="Global Education">国際教育</a>
+          <a href="#roles" data-ja="役職紹介" data-en="Leadership">役職紹介</a>
           <a href="#news" data-ja="国際ニュース" data-en="Global News">国際ニュース</a>
           <a href="#roadmap" data-ja="ロードマップ" data-en="Roadmap">ロードマップ</a>
         </nav>
-        <button class="lang-switch" id="langToggle">EN / JP</button>
+        <button class="lang-switch" id="langToggle" type="button" aria-label="Switch language">EN / JP</button>
       </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
+      <div class="globe-line" aria-hidden="true"></div>
       <div class="hero-inner">
-        <div class="eyebrow" data-ja="国際教育・学習コミュニティ" data-en="International School Community">国際教育・学習コミュニティ</div>
-        <h1 data-ja="Toshofu International School" data-en="TOSHOFU INTERNATIONAL SCHOOL">Toshofu International School</h1>
-        <div class="kana" data-ja="TIS" data-en="Toshofu International School">TIS</div>
-        <div class="catch" data-ja="From Japan to the World. 東から世界へ、未来をつなぐインターナショナルスクール" data-en="Connecting learning from Japan to the world.">From Japan to the World. 東から世界へ、未来をつなぐインターナショナルスクール</div>
-        <p class="lead" data-ja="Toshofu International School（TIS）は、国際交流・語学・経済ニュース・テクノロジーを通じて、世界とつながる視野を育てるコミュニティです。" data-en="Toshofu International School brings together three values: the East as a symbol of hope, the first step as a spirit of challenge, and abundance as a sign of wisdom and well-being. We aim to develop people who can contribute to the next generation.">Toshofu International School（TIS）は、国際交流・語学・経済ニュース・テクノロジーを通じて、世界とつながる視野を育てるコミュニティです。</p>
+        <div class="eyebrow" data-ja="国際大学設立プロジェクト" data-en="International University Project">国際大学設立プロジェクト</div>
+        <h1 data-ja="Toshofu International University" data-en="Toshofu International University">Toshofu International University</h1>
+        <div class="abbr" data-ja="TIU" data-en="TIU">TIU</div>
+        <div class="catch" data-ja="From Japan to the World. 東から世界へ、未来をつなぐ大学。" data-en="From Japan to the World. A university connecting learning to the future.">From Japan to the World. 東から世界へ、未来をつなぐ大学。</div>
+        <p class="lead" data-ja="Toshofu International University（TIU）は、国際教育・語学・経済ニュース・テクノロジーを通じて、世界とつながる視野と実践力を育てる大学を目指します。" data-en="Toshofu International University (TIU) aims to cultivate global perspectives and practical skills through international education, languages, economic news, and technology.">Toshofu International University（TIU）は、国際教育・語学・経済ニュース・テクノロジーを通じて、世界とつながる視野と実践力を育てる大学を目指します。</p>
         <div class="btns">
-          <a class="btn primary" href="#about" data-ja="学校紹介を見る" data-en="About School">学校紹介を見る</a>
-          <a class="btn secondary" href="#roles" data-ja="メンバーを見る" data-en="View Members">メンバーを見る</a>
+          <a class="btn primary" href="#about" data-ja="大学紹介を見る" data-en="View About">大学紹介を見る</a>
+          <a class="btn secondary" href="#roles" data-ja="役職紹介を見る" data-en="View Leadership">役職紹介を見る</a>
+        </div>
+
+        <div class="stats" aria-label="University highlights">
+          <div class="stat"><strong>Global</strong><span data-ja="国際教育を軸にした学び" data-en="Learning centered on global education">国際教育を軸にした学び</span></div>
+          <div class="stat"><strong>DX</strong><span data-ja="テクノロジーと社会を接続" data-en="Connecting technology and society">テクノロジーと社会を接続</span></div>
+          <div class="stat"><strong>News</strong><span data-ja="経済・国際情勢を日常的に学ぶ" data-en="Daily learning from economy and world affairs">経済・国際情勢を日常的に学ぶ</span></div>
         </div>
       </div>
     </section>
@@ -581,18 +723,19 @@
       <div class="container">
         <div class="section-title">
           <span>ABOUT</span>
-          <h2 data-ja="学校紹介" data-en="About School">学校紹介</h2>
+          <h2 data-ja="大学紹介" data-en="About the University">大学紹介</h2>
         </div>
         <div class="about-grid">
           <div class="card symbol">
-            <div class="emblem">TIS<small>TOSHOFU INTERNATIONAL SCHOOL</small></div>
+            <div class="emblem">TIU<small>TOSHOFU INTERNATIONAL UNIVERSITY</small></div>
           </div>
           <div class="card">
-            <h3 data-ja="ロゴコンセプト" data-en="Logo Concept">ロゴコンセプト</h3>
+            <h3 data-ja="設立理念とロゴコンセプト" data-en="Founding Philosophy and Logo Concept">設立理念とロゴコンセプト</h3>
+            <p data-ja="TIUは、世界の変化を読み解き、自ら問いを立て、社会に新しい価値を生み出す人材の育成を目指します。地域に根ざしながらも、学びの視野を世界へ広げることを重視します。" data-en="TIU aims to develop people who can understand global change, ask meaningful questions, and create new value for society. We value learning that is rooted locally while expanding globally.">TIUは、世界の変化を読み解き、自ら問いを立て、社会に新しい価値を生み出す人材の育成を目指します。地域に根ざしながらも、学びの視野を世界へ広げることを重視します。</p>
             <div class="concept-list">
-              <div class="concept-item"><div class="circle">東</div><div><strong data-ja="日の出" data-en="Sunrise">日の出</strong><br><span data-ja="東から昇る太陽は、未来・希望・広がりを表します。" data-en="The rising sun represents the future, hope, and global expansion.">東から昇る太陽は、未来・希望・広がりを表します。</span></div></div>
-              <div class="concept-item"><div class="circle">初</div><div><strong data-ja="道" data-en="Path">道</strong><br><span data-ja="まっすぐに伸びる道は、はじまりの一歩・挑戦・学びの歩みを表します。" data-en="The straight path represents the first step, challenge, and lifelong learning.">まっすぐに伸びる道は、はじまりの一歩・挑戦・学びの歩みを表します。</span></div></div>
-              <div class="concept-item"><div class="circle">富</div><div><strong data-ja="富士山と稲穂" data-en="Mt. Fuji and Rice Ears">富士山と稲穂</strong><br><span data-ja="高い志と不変の価値、豊かさ・実り・感謝の心を表します。" data-en="Mt. Fuji and rice ears express high aspirations, stability, abundance, and gratitude.">高い志と不変の価値、豊かさ・実り・感謝の心を表します。</span></div></div>
+              <div class="concept-item"><div class="circle">東</div><div><strong data-ja="日の出" data-en="Sunrise">日の出</strong><br><span data-ja="東から昇る太陽は、未来・希望・世界への広がりを表します。" data-en="The rising sun represents the future, hope, and global expansion.">東から昇る太陽は、未来・希望・世界への広がりを表します。</span></div></div>
+              <div class="concept-item"><div class="circle">初</div><div><strong data-ja="はじまりの道" data-en="The First Path">はじまりの道</strong><br><span data-ja="まっすぐに伸びる道は、挑戦・探究・学び続ける姿勢を表します。" data-en="The straight path represents challenge, inquiry, and lifelong learning.">まっすぐに伸びる道は、挑戦・探究・学び続ける姿勢を表します。</span></div></div>
+              <div class="concept-item"><div class="circle">富</div><div><strong data-ja="知の豊かさ" data-en="Intellectual Abundance">知の豊かさ</strong><br><span data-ja="富士山と稲穂のイメージは、高い志・実り・感謝の心を表します。" data-en="Mt. Fuji and rice ears express aspiration, harvest, and gratitude.">富士山と稲穂のイメージは、高い志・実り・感謝の心を表します。</span></div></div>
             </div>
           </div>
         </div>
@@ -603,23 +746,33 @@
       <div class="container">
         <div class="section-title">
           <span>GLOBAL EDUCATION</span>
-          <h2 data-ja="国際的な学びの特色" data-en="Global Learning Features">国際的な学びの特色</h2>
+          <h2 data-ja="国際教育の特色" data-en="Features of Global Education">国際教育の特色</h2>
         </div>
         <div class="global-grid">
           <div class="global-card">
             <div class="global-icon">🌏</div>
-            <h3 data-ja="東から世界へ広がる視野" data-en="Global Perspective from the East">東から世界へ広がる視野</h3>
-            <p data-ja="地域に根ざしながら、国際社会の課題を理解し、多様な価値観を尊重する人材を育てます。" data-en="We cultivate people who respect diverse values and understand global issues while staying rooted in their local community.">地域に根ざしながら、国際社会の課題を理解し、多様な価値観を尊重する人材を育てます。</p>
+            <h3 data-ja="グローバル教育" data-en="Global Education">グローバル教育</h3>
+            <p data-ja="国際社会の課題を多角的に学び、地域と世界をつなぐ視点を育てます。" data-en="Students learn global issues from multiple perspectives and connect local communities with the world.">国際社会の課題を多角的に学び、地域と世界をつなぐ視点を育てます。</p>
           </div>
           <div class="global-card">
             <div class="global-icon">🗣️</div>
-            <h3 data-ja="多言語コミュニケーション" data-en="Multilingual Communication">多言語コミュニケーション</h3>
-            <p data-ja="日本語と英語を中心に、国際交流・海外連携・発信力の強化を重視します。" data-en="We emphasize Japanese and English communication, international exchange, overseas collaboration, and global presentation skills.">日本語と英語を中心に、国際交流・海外連携・発信力の強化を重視します。</p>
+            <h3 data-ja="英語・多言語教育" data-en="English and Multilingual Learning">英語・多言語教育</h3>
+            <p data-ja="英語を中心に、異文化理解と発信力を高めるコミュニケーション教育を行います。" data-en="We provide communication education that develops English ability, intercultural understanding, and presentation skills.">英語を中心に、異文化理解と発信力を高めるコミュニケーション教育を行います。</p>
           </div>
           <div class="global-card">
             <div class="global-icon">🤝</div>
-            <h3 data-ja="国際連携と産学協働" data-en="International Collaboration">国際連携と産学協働</h3>
-            <p data-ja="海外教育機関や企業との連携を想定し、研究・実践・社会貢献をつなげます。" data-en="We envision partnerships with overseas institutions and companies to connect research, practice, and social contribution.">海外教育機関や企業との連携を想定し、研究・実践・社会貢献をつなげます。</p>
+            <h3 data-ja="国際交流" data-en="International Exchange">国際交流</h3>
+            <p data-ja="海外大学・企業・地域団体との連携を想定し、実践的な学びを広げます。" data-en="We envision practical learning through partnerships with overseas universities, companies, and communities.">海外大学・企業・地域団体との連携を想定し、実践的な学びを広げます。</p>
+          </div>
+          <div class="global-card">
+            <div class="global-icon">💻</div>
+            <h3 data-ja="テクノロジー教育" data-en="Technology Education">テクノロジー教育</h3>
+            <p data-ja="AI、データ活用、クラウド、サイバーセキュリティなど、社会で活きるIT力を育てます。" data-en="Students build practical IT skills in AI, data, cloud, and cybersecurity.">AI、データ活用、クラウド、サイバーセキュリティなど、社会で活きるIT力を育てます。</p>
+          </div>
+          <div class="global-card">
+            <div class="global-icon">📈</div>
+            <h3 data-ja="経済・国際情勢" data-en="Economy and World Affairs">経済・国際情勢</h3>
+            <p data-ja="世界経済、政治、産業動向を読み解き、社会を理解する力を身につけます。" data-en="Students learn to understand society by reading global economic, political, and industrial trends.">世界経済、政治、産業動向を読み解き、社会を理解する力を身につけます。</p>
           </div>
         </div>
       </div>
@@ -628,18 +781,18 @@
     <section id="roles" class="roles reveal">
       <div class="container">
         <div class="section-title">
-          <span>FOUNDERS</span>
-          <h2 data-ja="教職員・役職紹介" data-en="Faculty and Roles">教職員・役職紹介</h2>
+          <span>LEADERSHIP</span>
+          <h2 data-ja="教職員・役職紹介" data-en="Faculty and Leadership">教職員・役職紹介</h2>
         </div>
         <div class="role-grid">
-          <div class="role-card"><div class="icon">🏫</div><div class="name">宮園</div><div class="position" data-ja="施設・キャンパス整備" data-en="Facilities & Campus">施設・キャンパス整備</div><p data-ja="キャンパス計画、建築・設備管理、行政手続き、環境整備を担当します。" data-en="Responsible for campus planning, facilities, administrative procedures, and environmental development.">キャンパス計画、建築・設備管理、行政手続き、環境整備を担当します。</p></div>
-          <div class="role-card"><div class="icon">🔬</div><div class="name">筧</div><div class="position" data-ja="研究・産学連携" data-en="Research & Industry">研究・産学連携</div><p data-ja="研究戦略の策定、産学連携の推進、外部研究資金の獲得を担当します。" data-en="Responsible for research strategy, industry collaboration, and external research funding.">研究戦略の策定、産学連携の推進、外部研究資金の獲得を担当します。</p></div>
-          <div class="role-card"><div class="icon">📣</div><div class="name">中丸</div><div class="position" data-ja="広報・ブランド戦略" data-en="PR & Branding">広報・ブランド戦略</div><p data-ja="ブランド戦略、PR戦略、学生募集、入試広報、地域連携を担当します。" data-en="Responsible for branding, PR, student recruitment, admissions communication, and regional relations.">ブランド戦略、PR戦略、学生募集、入試広報、地域連携を担当します。</p></div>
-          <div class="role-card"><div class="icon">👔</div><div class="name">榊</div><div class="position" data-ja="理事長" data-en="Chairperson">理事長</div><p data-ja="全体統括、意思決定、法人運営、長期ビジョン策定を担当します。" data-en="Leads overall governance, decision-making, institutional management, and long-term vision.">全体統括、意思決定、法人運営、長期ビジョン策定を担当します。</p></div>
+          <div class="role-card"><div class="icon">👔</div><div class="name">榊</div><div class="position" data-ja="理事長" data-en="Chairperson">理事長</div><p data-ja="全体統括、意思決定、法人運営、長期ビジョン策定を担当します。" data-en="Leads governance, decision-making, institutional management, and long-term vision.">全体統括、意思決定、法人運営、長期ビジョン策定を担当します。</p></div>
+          <div class="role-card"><div class="icon">💻</div><div class="name">佐伯</div><div class="position" data-ja="IT部門・DX推進" data-en="IT and DX">IT部門・DX推進</div><p data-ja="IT戦略、システム要件整理、ネットワーク設計、DX推進を担当します。" data-en="Responsible for IT strategy, system requirements, network design, and digital transformation.">IT戦略、システム要件整理、ネットワーク設計、DX推進を担当します。</p></div>
           <div class="role-card"><div class="icon">🎓</div><div class="name">清水</div><div class="position" data-ja="学長候補・教育統括" data-en="President Candidate">学長候補・教育統括</div><p data-ja="教育理念、学部・学科設計、カリキュラム構築、教員採用を担当します。" data-en="Responsible for educational philosophy, faculty planning, curriculum design, and faculty recruitment.">教育理念、学部・学科設計、カリキュラム構築、教員採用を担当します。</p></div>
-          <div class="role-card"><div class="icon">💻</div><div class="name">佐伯</div><div class="position" data-ja="IT部門・DX推進" data-en="IT & DX">IT部門・DX推進</div><p data-ja="IT戦略、システム要件整理、ネットワーク設計、DX推進を担当します。" data-en="Responsible for IT strategy, system requirements, network design, and digital transformation.">IT戦略、システム要件整理、ネットワーク設計、DX推進を担当します。</p></div>
-          <div class="role-card"><div class="icon">📈</div><div class="name">富田</div><div class="position" data-ja="財務・資金戦略" data-en="Finance">財務・資金戦略</div><p data-ja="資金計画、調達方法の検討、寄付金募集、収支シミュレーションを担当します。" data-en="Responsible for financial planning, fundraising strategy, donations, and budget simulation.">資金計画、調達方法の検討、寄付金募集、収支シミュレーションを担当します。</p></div>
-          <div class="role-card"><div class="icon">🧹</div><div class="name">きのこ</div><div class="position" data-ja="清掃員" data-en="Campus Care">清掃員</div><p data-ja="校内清掃、美化活動、備品管理補助、快適なキャンパス環境維持を担当します。" data-en="Supports campus cleaning, beautification, equipment management, and comfortable learning environments.">校内清掃、美化活動、備品管理補助、快適なキャンパス環境維持を担当します。</p></div>
+          <div class="role-card"><div class="icon">🏫</div><div class="name">宮園</div><div class="position" data-ja="施設・キャンパス整備" data-en="Facilities and Campus">施設・キャンパス整備</div><p data-ja="キャンパス計画、建築・設備管理、行政手続き、環境整備を担当します。" data-en="Responsible for campus planning, facilities, administrative procedures, and environmental development.">キャンパス計画、建築・設備管理、行政手続き、環境整備を担当します。</p></div>
+          <div class="role-card"><div class="icon">🔬</div><div class="name">筧</div><div class="position" data-ja="研究・産学連携" data-en="Research and Industry">研究・産学連携</div><p data-ja="研究戦略の策定、産学連携の推進、外部研究資金の獲得を担当します。" data-en="Responsible for research strategy, industry collaboration, and external research funding.">研究戦略の策定、産学連携の推進、外部研究資金の獲得を担当します。</p></div>
+          <div class="role-card"><div class="icon">📣</div><div class="name">中丸</div><div class="position" data-ja="広報・ブランド戦略" data-en="PR and Branding">広報・ブランド戦略</div><p data-ja="ブランド戦略、PR戦略、学生募集、入試広報、地域連携を担当します。" data-en="Responsible for branding, PR, student recruitment, admissions communication, and regional relations.">ブランド戦略、PR戦略、学生募集、入試広報、地域連携を担当します。</p></div>
+          <div class="role-card"><div class="icon">📊</div><div class="name">富田</div><div class="position" data-ja="財務・資金戦略" data-en="Finance">財務・資金戦略</div><p data-ja="資金計画、調達方法の検討、寄付金募集、収支シミュレーションを担当します。" data-en="Responsible for financial planning, fundraising strategy, donations, and budget simulation.">資金計画、調達方法の検討、寄付金募集、収支シミュレーションを担当します。</p></div>
+          <div class="role-card"><div class="icon">🌿</div><div class="name">きのこ</div><div class="position" data-ja="キャンパス環境管理" data-en="Campus Environment">キャンパス環境管理</div><p data-ja="校内美化、備品管理補助、快適なキャンパス環境維持を担当します。" data-en="Supports campus beautification, equipment management, and comfortable learning environments.">校内美化、備品管理補助、快適なキャンパス環境維持を担当します。</p></div>
         </div>
       </div>
     </section>
@@ -648,27 +801,27 @@
       <div class="container">
         <div class="section-title">
           <span>GLOBAL & ECONOMIC NEWS</span>
-          <h2 data-ja="経済・国際ニュースダイジェスト" data-en="Economic & Global News Digest">経済・国際ニュースダイジェスト</h2>
+          <h2 data-ja="経済・国際ニュースダイジェスト" data-en="Economic and Global News Digest">経済・国際ニュースダイジェスト</h2>
         </div>
-        <p class="news-note" data-ja="国際社会の動きを学びにつなげるための掲載欄です。GitHub Pagesの静的サイトでは自動取得ではなく、ニュース本文を定期的に手動更新する運用が安全です。" data-en="This section connects global events with learning. On a static GitHub Pages site, manually updating the news text is the safest and simplest approach.">国際社会の動きを学びにつなげるための掲載欄です。GitHub Pagesの静的サイトでは自動取得ではなく、ニュース本文を定期的に手動更新する運用が安全です。</p>
+        <p class="news-note" data-ja="国際社会の動きを学びにつなげるための掲載欄です。GitHub Pagesの静的サイトでは、自動取得ではなく手動更新できるニュースカード形式にしています。" data-en="This section connects global events with learning. For a static GitHub Pages site, these cards are designed for safe manual updates rather than automatic fetching.">国際社会の動きを学びにつなげるための掲載欄です。GitHub Pagesの静的サイトでは、自動取得ではなく手動更新できるニュースカード形式にしています。</p>
         <div class="news-grid">
           <article class="news-card">
             <div class="news-tag" data-ja="経済" data-en="Economy">経済</div>
             <div class="news-date" data-ja="更新日：2026.06" data-en="Updated: 2026.06">更新日：2026.06</div>
-            <h3 data-ja="世界経済の変化と教育の役割" data-en="Global Economic Change and Education">世界経済の変化と教育の役割</h3>
-            <p data-ja="為替、物価、雇用、テクノロジーの変化を学び、社会を読み解く力を育てます。" data-en="Students learn about exchange rates, prices, employment, and technology to understand society.">為替、物価、雇用、テクノロジーの変化を学び、社会を読み解く力を育てます。</p>
+            <h3 data-ja="世界経済の変化と大学教育" data-en="Global Economic Change and University Education">世界経済の変化と大学教育</h3>
+            <p data-ja="為替、物価、雇用、産業構造の変化を読み解き、社会を理解する力を育てます。" data-en="Students learn to understand society by analyzing exchange rates, prices, employment, and industrial change.">為替、物価、雇用、産業構造の変化を読み解き、社会を理解する力を育てます。</p>
           </article>
           <article class="news-card">
             <div class="news-tag" data-ja="国際" data-en="Global">国際</div>
             <div class="news-date" data-ja="更新日：2026.06" data-en="Updated: 2026.06">更新日：2026.06</div>
             <h3 data-ja="国際情勢と多文化理解" data-en="Global Affairs and Cultural Understanding">国際情勢と多文化理解</h3>
-            <p data-ja="各国の政策、地域課題、国際協力を学び、多角的な視点を養います。" data-en="Students explore policies, regional issues, and international cooperation from multiple perspectives.">各国の政策、地域課題、国際協力を学び、多角的な視点を養います。</p>
+            <p data-ja="各国の政策、地域課題、国際協力を学び、多角的に考える力を養います。" data-en="Students explore policies, regional issues, and international cooperation from multiple perspectives.">各国の政策、地域課題、国際協力を学び、多角的に考える力を養います。</p>
           </article>
           <article class="news-card">
             <div class="news-tag" data-ja="テクノロジー" data-en="Technology">テクノロジー</div>
             <div class="news-date" data-ja="更新日：2026.06" data-en="Updated: 2026.06">更新日：2026.06</div>
             <h3 data-ja="AI・DXと未来の学び" data-en="AI, DX, and Future Learning">AI・DXと未来の学び</h3>
-            <p data-ja="AI、データ活用、サイバーセキュリティなど、未来社会に必要な知識を扱います。" data-en="The curriculum covers AI, data use, cybersecurity, and the knowledge needed for the future.">AI、データ活用、サイバーセキュリティなど、未来社会に必要な知識を扱います。</p>
+            <p data-ja="AI、データ活用、クラウド、サイバーセキュリティなど、未来社会に必要な知識を扱います。" data-en="The curriculum covers AI, data, cloud, cybersecurity, and knowledge needed for the future.">AI、データ活用、クラウド、サイバーセキュリティなど、未来社会に必要な知識を扱います。</p>
           </article>
         </div>
       </div>
@@ -678,23 +831,23 @@
       <div class="container">
         <div class="section-title">
           <span>ROADMAP</span>
-          <h2 data-ja="学校設立ロードマップ" data-en="School Roadmap">学校設立ロードマップ</h2>
+          <h2 data-ja="大学設立ロードマップ" data-en="University Establishment Roadmap">大学設立ロードマップ</h2>
         </div>
         <div class="roadmap-grid">
-          <div class="phase"><span data-ja="フェーズ1" data-en="Phase 1">フェーズ1</span><strong data-ja="構想策定" data-en="Concept">構想策定</strong><p data-ja="学校設立構想と基本方針を具体化します。" data-en="Clarify the school concept and basic policy.">学校設立構想と基本方針を具体化します。</p></div>
-          <div class="phase"><span data-ja="フェーズ2" data-en="Phase 2">フェーズ2</span><strong data-ja="組織体制づくり" data-en="Foundation">組織体制づくり</strong><p data-ja="運営体制、役割分担、教育方針を整備します。" data-en="Prepare the management structure, roles, and educational policy.">運営体制、役割分担、教育方針を整備します。</p></div>
-          <div class="phase"><span data-ja="フェーズ3" data-en="Phase 3">フェーズ3</span><strong data-ja="教育基盤整備" data-en="Campus">教育基盤整備</strong><p data-ja="Webサイト、学習コンテンツ、国際教育プログラムの基盤を整えます。" data-en="Prepare the website, learning content, and global education programs.">Webサイト、学習コンテンツ、国際教育プログラムの基盤を整えます。</p></div>
-          <div class="phase"><span data-ja="フェーズ4" data-en="Phase 4">フェーズ4</span><strong data-ja="開校準備" data-en="Preparation">開校準備</strong><p data-ja="生徒募集、イベント企画、情報発信を進めます。" data-en="Prepare student recruitment, events, and communications.">生徒募集、イベント企画、情報発信を進めます。</p></div>
-          <div class="phase"><span data-ja="フェーズ5" data-en="Phase 5">フェーズ5</span><strong data-ja="開校" data-en="Opening">開校</strong><p data-ja="新大学の開校と新たな歴史の始まりです。" data-en="Launch international education as Toshofu International School.">新大学の開校と新たな歴史の始まりです。</p></div>
+          <div class="phase"><span data-ja="フェーズ1" data-en="Phase 1">フェーズ1</span><strong data-ja="構想策定" data-en="Concept">構想策定</strong><p data-ja="大学設立構想と基本方針を具体化します。" data-en="Clarify the university concept and basic policy.">大学設立構想と基本方針を具体化します。</p></div>
+          <div class="phase"><span data-ja="フェーズ2" data-en="Phase 2">フェーズ2</span><strong data-ja="学校法人設立" data-en="Foundation">学校法人設立</strong><p data-ja="法人設立、認可申請、運営体制の整備を進めます。" data-en="Prepare the legal foundation, approval process, and management structure.">法人設立、認可申請、運営体制の整備を進めます。</p></div>
+          <div class="phase"><span data-ja="フェーズ3" data-en="Phase 3">フェーズ3</span><strong data-ja="教育基盤整備" data-en="Academic Foundation">教育基盤整備</strong><p data-ja="カリキュラム、学習環境、IT基盤、国際教育プログラムを整えます。" data-en="Prepare the curriculum, learning environment, IT foundation, and global education programs.">カリキュラム、学習環境、IT基盤、国際教育プログラムを整えます。</p></div>
+          <div class="phase"><span data-ja="フェーズ4" data-en="Phase 4">フェーズ4</span><strong data-ja="開校準備" data-en="Preparation">開校準備</strong><p data-ja="学生募集、広報、イベント、システム運用の準備を進めます。" data-en="Prepare student recruitment, PR, events, and system operations.">学生募集、広報、イベント、システム運用の準備を進めます。</p></div>
+          <div class="phase"><span data-ja="フェーズ5" data-en="Phase 5">フェーズ5</span><strong data-ja="開校" data-en="Opening">開校</strong><p data-ja="Toshofu International Universityとして新たな歴史を始めます。" data-en="Begin a new history as Toshofu International University.">Toshofu International Universityとして新たな歴史を始めます。</p></div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <span data-ja="私たちは、日本から世界へ、学びと交流の輪を広げます。" data-en="We expand learning and exchange from the East to the world.">私たちは、日本から世界へ、学びと交流の輪を広げます。</span><br>
-    © Toshofu International School
-    <div class="demo-note" data-ja="※本サイトは架空のインターナショナルスクールを題材としたデモサイトです。実在する学校・教育機関とは関係ありません。" data-en="This is a demo website for a fictional international school and is not affiliated with any real school or educational institution.">※本サイトは架空のインターナショナルスクールを題材としたデモサイトです。実在する学校・教育機関とは関係ありません。</div>
+    <span data-ja="私たちは、日本から世界へ、学びと交流の輪を広げます。" data-en="We expand learning and exchange from Japan to the world.">私たちは、日本から世界へ、学びと交流の輪を広げます。</span><br>
+    © Toshofu International University
+    <div class="demo-note" data-ja="※本サイトは架空の大学設立プロジェクトを題材としたデモサイトです。実在する教育機関とは関係ありません。" data-en="This is a demo website for a fictional university establishment project and is not affiliated with any real educational institution.">※本サイトは架空の大学設立プロジェクトを題材としたデモサイトです。実在する教育機関とは関係ありません。</div>
   </footer>
 
   <script>
