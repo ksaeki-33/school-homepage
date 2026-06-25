@@ -138,6 +138,24 @@
       box-shadow: 0 10px 22px rgba(6, 36, 82, .13);
     }
 
+    .mobile-menu-toggle {
+      display: none;
+      border: 1px solid #c9d7e8;
+      background: var(--white);
+      color: var(--navy);
+      border-radius: 999px;
+      padding: 10px 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .22s ease, box-shadow .22s ease;
+      white-space: nowrap;
+    }
+
+    .mobile-menu-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(6, 36, 82, .13);
+    }
+
     .hero {
       min-height: 88vh;
       position: relative;
@@ -1034,6 +1052,36 @@
       .emblem small { bottom: 26px; font-size: 9px; }
       .emblem::before { top: 14px; font-size: 38px; }
     }
+
+    @media (max-width: 920px) {
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        right: 16px;
+        left: 16px;
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        padding: 18px 16px;
+        background: rgba(255,255,255,.98);
+        border-radius: 18px;
+        box-shadow: 0 16px 42px rgba(6,36,82,.12);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .mobile-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-right {
+        position: relative;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1048,7 +1096,7 @@
       </div>
 
       <div class="nav-right">
-        <nav class="nav-links" aria-label="Main navigation">
+        <nav class="nav-links" aria-label="Main navigation" id="mainNavLinks">
           <a href="#about" data-ja="大学紹介" data-en="About">大学紹介</a>
           <a href="#academics" data-ja="学部紹介" data-en="Academics">学部紹介</a>
           <a href="#international" data-ja="国際教育" data-en="Global Education">国際教育</a>
@@ -1057,6 +1105,7 @@
           <a href="#roles" data-ja="役職紹介" data-en="Leadership">役職紹介</a>
           <a href="#news" data-ja="お知らせ" data-en="News">お知らせ</a>
         </nav>
+        <button class="mobile-menu-toggle" id="menuToggle" type="button" aria-label="Open mobile menu" aria-expanded="false">☰</button>
         <button class="lang-switch" id="langToggle" type="button" aria-label="Switch language">EN / JP</button>
       </div>
     </div>
@@ -1378,6 +1427,22 @@
 
     const contactForm = document.getElementById("contactForm");
     const formMessage = document.getElementById("formMessage");
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNavLinks = document.getElementById("mainNavLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNavLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (mainNavLinks.classList.contains("open")) {
+          mainNavLinks.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
 
     contactForm.addEventListener("submit", (event) => {
       event.preventDefault();
