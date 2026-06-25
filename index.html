@@ -272,6 +272,7 @@
 
     .btn.primary { background: var(--navy); color: white; }
     .btn.secondary { border: 1px solid var(--navy); color: var(--navy); background: white; }
+    .btn.gold { background: var(--gold); color: white; }
 
     .stats {
       max-width: 980px;
@@ -462,6 +463,355 @@
       margin-bottom: 10px;
     }
 
+    .academics {
+      background: linear-gradient(180deg, #ffffff, #f7fafe);
+    }
+
+    .faculty-grid,
+    .life-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .faculty-card,
+    .life-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      min-height: 230px;
+      box-shadow: 0 10px 24px rgba(6,36,82,.06);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .faculty-card {
+      border-top: 5px solid var(--gold);
+    }
+
+    .faculty-card:hover,
+    .life-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .faculty-code {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--gold);
+      font-weight: 900;
+      letter-spacing: .18em;
+      font-size: 12px;
+    }
+
+    .campus-life {
+      background: var(--light);
+    }
+
+    .life-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      background: var(--navy);
+      color: white;
+      font-size: 24px;
+      box-shadow: 0 10px 22px rgba(6,36,82,.16);
+    }
+
+    .exchange-panel {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 10px 22px rgba(6,36,82,.06);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--navy);
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .official-news {
+      background:
+        radial-gradient(circle at 15% 10%, rgba(255,255,255,.12), transparent 24%),
+        linear-gradient(135deg, var(--deep-blue), var(--blue));
+      color: white;
+    }
+
+    .official-news .section-title { color: white; }
+    .official-news .section-title span { color: #e4c169; }
+
+    .notice-list {
+      display: grid;
+      gap: 12px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .notice-item {
+      display: grid;
+      grid-template-columns: 140px 150px 1fr;
+      gap: 18px;
+      align-items: center;
+      background: rgba(255,255,255,.96);
+      color: var(--text);
+      border-left: 5px solid var(--gold);
+      border-radius: 16px;
+      padding: 18px 22px;
+      box-shadow: 0 12px 28px rgba(0,0,0,.16);
+    }
+
+    .notice-date {
+      color: var(--navy);
+      font-weight: 900;
+    }
+
+    .notice-tag {
+      justify-self: start;
+      border-radius: 999px;
+      padding: 4px 11px;
+      background: #edf4ff;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .admissions {
+      background: linear-gradient(180deg, #ffffff, #f5f8fc);
+    }
+
+    .admission-layout {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .admission-layout .card {
+      overflow-x: auto;
+    }
+
+    .admission-types {
+      display: grid;
+      gap: 12px;
+    }
+
+    .admission-type {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 18px;
+      background: #fbfdff;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 16px;
+      font-size: 14px;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      border-bottom: 1px solid var(--border);
+      padding: 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .schedule-table th {
+      background: var(--navy);
+      color: white;
+      font-weight: 900;
+    }
+
+    .schedule-table tr:last-child td { border-bottom: 0; }
+
+    .project-note {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--light-gold);
+      color: #5f4508;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .access {
+      background: var(--light);
+    }
+
+    .access-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .map-card {
+      min-height: 360px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(11,79,138,.1), rgba(181,138,42,.08)),
+        #f8fbff;
+    }
+
+    .fiction-map {
+      position: relative;
+      min-height: 290px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background:
+        linear-gradient(90deg, rgba(11,79,138,.08) 1px, transparent 1px),
+        linear-gradient(rgba(11,79,138,.08) 1px, transparent 1px),
+        linear-gradient(145deg, #eef7ff, #ffffff 52%, #f5ead0);
+      background-size: 38px 38px, 38px 38px, auto;
+      overflow: hidden;
+    }
+
+    .water {
+      position: absolute;
+      left: -30px;
+      right: 18%;
+      bottom: -26px;
+      height: 120px;
+      border-radius: 50% 50% 0 0;
+      background: rgba(11,79,138,.18);
+    }
+
+    .campus-pin {
+      position: absolute;
+      top: 82px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--navy);
+      color: white;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(6,36,82,.2);
+      white-space: nowrap;
+    }
+
+    .station-pin {
+      position: absolute;
+      right: 28px;
+      bottom: 86px;
+      background: white;
+      color: var(--blue);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 10px 22px rgba(6,36,82,.12);
+    }
+
+    .route-line {
+      position: absolute;
+      width: 190px;
+      height: 3px;
+      right: 92px;
+      bottom: 128px;
+      background: repeating-linear-gradient(90deg, var(--gold), var(--gold) 12px, transparent 12px, transparent 20px);
+      transform: rotate(-24deg);
+      transform-origin: right center;
+    }
+
+    .access-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .access-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      background: #fbfdff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .contact {
+      background: white;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .form-field label {
+      display: block;
+      color: var(--navy);
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      border: 1px solid #c9d7e8;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font: inherit;
+      color: var(--text);
+      background: #fbfdff;
+    }
+
+    .form-field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-message {
+      min-height: 24px;
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .contact-form .btn {
+      border: 0;
+      cursor: pointer;
+      justify-self: start;
+    }
+
     .roles { background: var(--light); }
 
     .role-grid {
@@ -646,6 +996,12 @@
       .global-grid { grid-template-columns: repeat(2, 1fr); }
       .role-grid { grid-template-columns: repeat(2, 1fr); }
       .roadmap-grid { grid-template-columns: 1fr; }
+      .faculty-grid,
+      .life-grid { grid-template-columns: repeat(2, 1fr); }
+      .exchange-panel,
+      .admission-layout,
+      .access-layout,
+      .contact-layout { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 920px) {
@@ -653,6 +1009,7 @@
       .news-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .stats { grid-template-columns: 1fr; }
+      .notice-item { grid-template-columns: 1fr; gap: 6px; }
     }
 
     @media (max-width: 600px) {
@@ -667,6 +1024,12 @@
       .card { padding: 22px; }
       .global-grid { grid-template-columns: 1fr; }
       .role-grid { grid-template-columns: 1fr; }
+      .faculty-grid,
+      .life-grid,
+      .metric-grid { grid-template-columns: 1fr; }
+      .schedule-table { font-size: 13px; }
+      .schedule-table th,
+      .schedule-table td { padding: 10px; }
       .emblem { width: 184px; height: 184px; font-size: 44px; }
       .emblem small { bottom: 26px; font-size: 9px; }
       .emblem::before { top: 14px; font-size: 38px; }
@@ -687,10 +1050,12 @@
       <div class="nav-right">
         <nav class="nav-links" aria-label="Main navigation">
           <a href="#about" data-ja="大学紹介" data-en="About">大学紹介</a>
+          <a href="#academics" data-ja="学部紹介" data-en="Academics">学部紹介</a>
           <a href="#international" data-ja="国際教育" data-en="Global Education">国際教育</a>
+          <a href="#admissions" data-ja="入試情報" data-en="Admissions">入試情報</a>
+          <a href="#access" data-ja="アクセス" data-en="Access">アクセス</a>
           <a href="#roles" data-ja="役職紹介" data-en="Leadership">役職紹介</a>
-          <a href="#news" data-ja="国際ニュース" data-en="Global News">国際ニュース</a>
-          <a href="#roadmap" data-ja="ロードマップ" data-en="Roadmap">ロードマップ</a>
+          <a href="#news" data-ja="お知らせ" data-en="News">お知らせ</a>
         </nav>
         <button class="lang-switch" id="langToggle" type="button" aria-label="Switch language">EN / JP</button>
       </div>
@@ -705,16 +1070,17 @@
         <h1 data-ja="Toshofu International University" data-en="Toshofu International University">Toshofu International University</h1>
         <div class="abbr" data-ja="TIU" data-en="TIU">TIU</div>
         <div class="catch" data-ja="From Japan to the World. 東から世界へ、未来をつなぐ大学。" data-en="From Japan to the World. A university connecting learning to the future.">From Japan to the World. 東から世界へ、未来をつなぐ大学。</div>
-        <p class="lead" data-ja="Toshofu International University（TIU）は、国際教育・語学・経済ニュース・テクノロジーを通じて、世界とつながる視野と実践力を育てる大学を目指します。" data-en="Toshofu International University (TIU) aims to cultivate global perspectives and practical skills through international education, languages, economic news, and technology.">Toshofu International University（TIU）は、国際教育・語学・経済ニュース・テクノロジーを通じて、世界とつながる視野と実践力を育てる大学を目指します。</p>
+        <p class="lead" data-ja="Toshofu International University（TIU）は、国際教養・情報科学・教育・経営・環境デザインを横断し、地域に根ざしながら世界と協働できる人材を育てる架空の国際大学です。" data-en="Toshofu International University (TIU) is a fictional international university that connects liberal arts, information science, education, business, and environmental design to cultivate people who can work with the world while staying rooted in the region.">Toshofu International University（TIU）は、国際教養・情報科学・教育・経営・環境デザインを横断し、地域に根ざしながら世界と協働できる人材を育てる架空の国際大学です。</p>
         <div class="btns">
-          <a class="btn primary" href="#about" data-ja="大学紹介を見る" data-en="View About">大学紹介を見る</a>
-          <a class="btn secondary" href="#roles" data-ja="役職紹介を見る" data-en="View Leadership">役職紹介を見る</a>
+          <a class="btn primary" href="#admissions" data-ja="入試情報を見る" data-en="View Admissions">入試情報を見る</a>
+          <a class="btn secondary" href="#access" data-ja="アクセスを見る" data-en="View Access">アクセスを見る</a>
+          <a class="btn gold" href="#academics" data-ja="学部紹介を見る" data-en="Explore Academics">学部紹介を見る</a>
         </div>
 
         <div class="stats" aria-label="University highlights">
-          <div class="stat"><strong>Global</strong><span data-ja="国際教育を軸にした学び" data-en="Learning centered on global education">国際教育を軸にした学び</span></div>
-          <div class="stat"><strong>DX</strong><span data-ja="テクノロジーと社会を接続" data-en="Connecting technology and society">テクノロジーと社会を接続</span></div>
-          <div class="stat"><strong>News</strong><span data-ja="経済・国際情勢を日常的に学ぶ" data-en="Daily learning from economy and world affairs">経済・国際情勢を日常的に学ぶ</span></div>
+          <div class="stat"><strong>5</strong><span data-ja="学部構想" data-en="Academic faculties">学部構想</span></div>
+          <div class="stat"><strong>24</strong><span data-ja="海外提携校想定" data-en="Planned partner institutions">海外提携校想定</span></div>
+          <div class="stat"><strong>2027</strong><span data-ja="入試情報公開中" data-en="Admissions information available">入試情報公開中</span></div>
         </div>
       </div>
     </section>
@@ -738,6 +1104,42 @@
               <div class="concept-item"><div class="circle">富</div><div><strong data-ja="知の豊かさ" data-en="Intellectual Abundance">知の豊かさ</strong><br><span data-ja="富士山と稲穂のイメージは、高い志・実り・感謝の心を表します。" data-en="Mt. Fuji and rice ears express aspiration, harvest, and gratitude.">富士山と稲穂のイメージは、高い志・実り・感謝の心を表します。</span></div></div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="academics" class="academics reveal">
+      <div class="container">
+        <div class="section-title">
+          <span>ACADEMICS</span>
+          <h2 data-ja="学部紹介" data-en="Academic Faculties">学部紹介</h2>
+        </div>
+        <div class="faculty-grid">
+          <article class="faculty-card">
+            <span class="faculty-code">01</span>
+            <h3 data-ja="国際教養学部" data-en="Faculty of International Liberal Arts">国際教養学部</h3>
+            <p data-ja="語学、地域研究、国際関係を横断的に学び、多文化社会で対話できる力を育てます。" data-en="Students study languages, regional studies, and international relations to build dialogue skills for multicultural society.">語学、地域研究、国際関係を横断的に学び、多文化社会で対話できる力を育てます。</p>
+          </article>
+          <article class="faculty-card">
+            <span class="faculty-code">02</span>
+            <h3 data-ja="情報科学部" data-en="Faculty of Information Science">情報科学部</h3>
+            <p data-ja="AI、データサイエンス、クラウド技術を基礎から学び、社会課題の解決に活かします。" data-en="Students learn AI, data science, and cloud technologies from the foundations and apply them to social issues.">AI、データサイエンス、クラウド技術を基礎から学び、社会課題の解決に活かします。</p>
+          </article>
+          <article class="faculty-card">
+            <span class="faculty-code">03</span>
+            <h3 data-ja="教育学部" data-en="Faculty of Education">教育学部</h3>
+            <p data-ja="学習支援、教育心理、ICT教育を通じて、次世代の学びを設計できる人材を育てます。" data-en="Through learning support, educational psychology, and ICT education, students learn to design next-generation learning.">学習支援、教育心理、ICT教育を通じて、次世代の学びを設計できる人材を育てます。</p>
+          </article>
+          <article class="faculty-card">
+            <span class="faculty-code">04</span>
+            <h3 data-ja="経営学部" data-en="Faculty of Business Administration">経営学部</h3>
+            <p data-ja="会計、マーケティング、国際ビジネスを学び、組織と地域を動かす実践力を磨きます。" data-en="Students study accounting, marketing, and international business to build practical organizational leadership.">会計、マーケティング、国際ビジネスを学び、組織と地域を動かす実践力を磨きます。</p>
+          </article>
+          <article class="faculty-card">
+            <span class="faculty-code">05</span>
+            <h3 data-ja="環境デザイン学部" data-en="Faculty of Environmental Design">環境デザイン学部</h3>
+            <p data-ja="自然環境、まちづくり、サステナブルデザインを学び、水辺と共生する社会を考えます。" data-en="Students explore nature, community planning, and sustainable design for societies that coexist with waterside environments.">自然環境、まちづくり、サステナブルデザインを学び、水辺と共生する社会を考えます。</p>
+          </article>
         </div>
       </div>
     </section>
@@ -775,6 +1177,34 @@
             <p data-ja="世界経済、政治、産業動向を読み解き、社会を理解する力を身につけます。" data-en="Students learn to understand society by reading global economic, political, and industrial trends.">世界経済、政治、産業動向を読み解き、社会を理解する力を身につけます。</p>
           </div>
         </div>
+        <div class="exchange-panel">
+          <div class="card">
+            <h3 data-ja="国際交流実績と教育構想" data-en="International Exchange and Global Education">国際交流実績と教育構想</h3>
+            <p data-ja="TIUでは、アジア、北米、欧州、オセアニアの大学との協定を想定し、短期留学、交換留学、オンライン協働授業を組み合わせた学びを展開します。" data-en="TIU envisions agreements with universities in Asia, North America, Europe, and Oceania, combining short-term study abroad, exchange programs, and online collaborative classes.">TIUでは、アジア、北米、欧州、オセアニアの大学との協定を想定し、短期留学、交換留学、オンライン協働授業を組み合わせた学びを展開します。</p>
+            <p data-ja="留学生サポート、バイリンガル科目、地域交流を通じて、キャンパス全体で国際性を感じられる環境づくりを目指します。" data-en="Through international student support, bilingual courses, and community exchange, TIU aims to create a campus where global perspectives are part of everyday life.">留学生サポート、バイリンガル科目、地域交流を通じて、キャンパス全体で国際性を感じられる環境づくりを目指します。</p>
+          </div>
+          <div class="metric-grid" aria-label="International exchange data">
+            <div class="metric"><strong>24</strong><span data-ja="海外提携校" data-en="Partner institutions">海外提携校</span></div>
+            <div class="metric"><strong>18%</strong><span data-ja="留学生比率目標" data-en="International student target">留学生比率目標</span></div>
+            <div class="metric"><strong>9</strong><span data-ja="英語開講科目群" data-en="English-taught course clusters">英語開講科目群</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="campus-life" class="campus-life reveal">
+      <div class="container">
+        <div class="section-title">
+          <span>CAMPUS LIFE</span>
+          <h2 data-ja="キャンパスライフ" data-en="Campus Life">キャンパスライフ</h2>
+        </div>
+        <div class="life-grid">
+          <article class="life-card"><div class="life-icon">♫</div><h3 data-ja="クラブ活動" data-en="Clubs and Activities">クラブ活動</h3><p data-ja="文化系、スポーツ系、国際交流系の団体を通じて、授業外の挑戦を支えます。" data-en="Cultural, sports, and international exchange groups support learning beyond the classroom.">文化系、スポーツ系、国際交流系の団体を通じて、授業外の挑戦を支えます。</p></article>
+          <article class="life-card"><div class="life-icon">↔</div><h3 data-ja="国際交流" data-en="International Exchange">国際交流</h3><p data-ja="留学生との交流イベントや語学ラウンジで、日常的に異文化に触れられます。" data-en="Exchange events and language lounges help students encounter different cultures in daily life.">留学生との交流イベントや語学ラウンジで、日常的に異文化に触れられます。</p></article>
+          <article class="life-card"><div class="life-icon">ID</div><h3 data-ja="学生ポータル" data-en="Student Portal">学生ポータル</h3><p data-ja="履修、成績、連絡、資料配布を一元化し、学生生活をオンラインで支えます。" data-en="Course registration, grades, notices, and materials are organized in one online portal.">履修、成績、連絡、資料配布を一元化し、学生生活をオンラインで支えます。</p></article>
+          <article class="life-card"><div class="life-icon">□</div><h3 data-ja="図書館" data-en="Library">図書館</h3><p data-ja="静かな閲覧席、グループ学習室、電子資料を備えた知の拠点を想定しています。" data-en="The library is planned as a learning hub with quiet seats, group rooms, and digital resources.">静かな閲覧席、グループ学習室、電子資料を備えた知の拠点を想定しています。</p></article>
+          <article class="life-card"><div class="life-icon">→</div><h3 data-ja="キャリア支援" data-en="Career Support">キャリア支援</h3><p data-ja="個別相談、インターンシップ、業界研究を通じて、進路選択を丁寧に支援します。" data-en="Individual advising, internships, and industry research support each student's career path.">個別相談、インターンシップ、業界研究を通じて、進路選択を丁寧に支援します。</p></article>
+        </div>
       </div>
     </section>
 
@@ -797,32 +1227,116 @@
       </div>
     </section>
 
-    <section id="news" class="news reveal">
+    <section id="news" class="official-news reveal">
       <div class="container">
         <div class="section-title">
-          <span>GLOBAL & ECONOMIC NEWS</span>
-          <h2 data-ja="経済・国際ニュースダイジェスト" data-en="Economic and Global News Digest">経済・国際ニュースダイジェスト</h2>
+          <span>NEWS</span>
+          <h2 data-ja="ニュース・お知らせ" data-en="News and Announcements">ニュース・お知らせ</h2>
         </div>
-        <p class="news-note" data-ja="国際社会の動きを学びにつなげるための掲載欄です。GitHub Pagesの静的サイトでは、自動取得ではなく手動更新できるニュースカード形式にしています。" data-en="This section connects global events with learning. For a static GitHub Pages site, these cards are designed for safe manual updates rather than automatic fetching.">国際社会の動きを学びにつなげるための掲載欄です。GitHub Pagesの静的サイトでは、自動取得ではなく手動更新できるニュースカード形式にしています。</p>
-        <div class="news-grid">
-          <article class="news-card">
-            <div class="news-tag" data-ja="経済" data-en="Economy">経済</div>
-            <div class="news-date" data-ja="更新日：2026.06" data-en="Updated: 2026.06">更新日：2026.06</div>
-            <h3 data-ja="世界経済の変化と大学教育" data-en="Global Economic Change and University Education">世界経済の変化と大学教育</h3>
-            <p data-ja="為替、物価、雇用、産業構造の変化を読み解き、社会を理解する力を育てます。" data-en="Students learn to understand society by analyzing exchange rates, prices, employment, and industrial change.">為替、物価、雇用、産業構造の変化を読み解き、社会を理解する力を育てます。</p>
-          </article>
-          <article class="news-card">
-            <div class="news-tag" data-ja="国際" data-en="Global">国際</div>
-            <div class="news-date" data-ja="更新日：2026.06" data-en="Updated: 2026.06">更新日：2026.06</div>
-            <h3 data-ja="国際情勢と多文化理解" data-en="Global Affairs and Cultural Understanding">国際情勢と多文化理解</h3>
-            <p data-ja="各国の政策、地域課題、国際協力を学び、多角的に考える力を養います。" data-en="Students explore policies, regional issues, and international cooperation from multiple perspectives.">各国の政策、地域課題、国際協力を学び、多角的に考える力を養います。</p>
-          </article>
-          <article class="news-card">
-            <div class="news-tag" data-ja="テクノロジー" data-en="Technology">テクノロジー</div>
-            <div class="news-date" data-ja="更新日：2026.06" data-en="Updated: 2026.06">更新日：2026.06</div>
-            <h3 data-ja="AI・DXと未来の学び" data-en="AI, DX, and Future Learning">AI・DXと未来の学び</h3>
-            <p data-ja="AI、データ活用、クラウド、サイバーセキュリティなど、未来社会に必要な知識を扱います。" data-en="The curriculum covers AI, data, cloud, cybersecurity, and knowledge needed for the future.">AI、データ活用、クラウド、サイバーセキュリティなど、未来社会に必要な知識を扱います。</p>
-          </article>
+        <div class="notice-list">
+          <article class="notice-item"><div class="notice-date">2026.06.20</div><div class="notice-tag" data-ja="入試" data-en="Admissions">入試</div><div data-ja="2027年度入試情報を公開しました" data-en="Admissions information for 2027 has been published">2027年度入試情報を公開しました</div></article>
+          <article class="notice-item"><div class="notice-date">2026.06.15</div><div class="notice-tag" data-ja="イベント" data-en="Event">イベント</div><div data-ja="オープンキャンパス開催のお知らせ" data-en="Open campus event announcement">オープンキャンパス開催のお知らせ</div></article>
+          <article class="notice-item"><div class="notice-date">2026.06.01</div><div class="notice-tag" data-ja="国際交流" data-en="Global">国際交流</div><div data-ja="国際交流プログラム募集開始" data-en="Applications open for international exchange programs">国際交流プログラム募集開始</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="admissions" class="admissions reveal">
+      <div class="container">
+        <div class="section-title">
+          <span>ADMISSIONS</span>
+          <h2 data-ja="入試情報" data-en="Admissions">入試情報</h2>
+        </div>
+        <div class="admission-layout">
+          <div class="card">
+            <h3 data-ja="2027年度入試" data-en="2027 Admissions">2027年度入試</h3>
+            <p data-ja="TIUでは、多様な学びの経験や将来像を評価する複数の選抜方式を想定しています。各方式の詳細は募集要項で確認できる構成です。" data-en="TIU envisions multiple selection methods to evaluate diverse learning experiences and future goals. Details are provided in the application guidelines.">TIUでは、多様な学びの経験や将来像を評価する複数の選抜方式を想定しています。各方式の詳細は募集要項で確認できる構成です。</p>
+            <div class="admission-types">
+              <div class="admission-type"><strong data-ja="総合型選抜" data-en="Comprehensive Selection">総合型選抜</strong><br><span data-ja="志望理由、活動実績、面接を中心に評価します。" data-en="Evaluates motivation, activities, and interview performance.">志望理由、活動実績、面接を中心に評価します。</span></div>
+              <div class="admission-type"><strong data-ja="学校推薦型選抜" data-en="School Recommendation Selection">学校推薦型選抜</strong><br><span data-ja="高校での学びと推薦内容を踏まえて選考します。" data-en="Reviews high school learning and recommendation materials.">高校での学びと推薦内容を踏まえて選考します。</span></div>
+              <div class="admission-type"><strong data-ja="一般選抜" data-en="General Selection">一般選抜</strong><br><span data-ja="学力試験と出願書類を総合的に評価します。" data-en="Evaluates academic tests and application documents.">学力試験と出願書類を総合的に評価します。</span></div>
+              <div class="admission-type"><strong data-ja="外国人留学生選抜" data-en="International Student Selection">外国人留学生選抜</strong><br><span data-ja="日本語または英語での学修準備状況を確認します。" data-en="Confirms readiness to study in Japanese or English.">日本語または英語での学修準備状況を確認します。</span></div>
+            </div>
+            <div class="btns">
+              <a class="btn primary" href="#admissions" data-ja="募集要項を見る" data-en="View Guidelines">募集要項を見る</a>
+              <a class="btn secondary" href="#contact" data-ja="資料請求" data-en="Request Materials">資料請求</a>
+            </div>
+          </div>
+          <div class="card">
+            <h3 data-ja="簡易スケジュール" data-en="Outline Schedule">簡易スケジュール</h3>
+            <table class="schedule-table">
+              <thead>
+                <tr><th data-ja="区分" data-en="Type">区分</th><th data-ja="出願期間" data-en="Application">出願期間</th><th data-ja="試験日" data-en="Exam">試験日</th><th data-ja="合格発表" data-en="Results">合格発表</th></tr>
+              </thead>
+              <tbody>
+                <tr><td data-ja="総合型選抜" data-en="Comprehensive">総合型選抜</td><td>2026.09.01 - 09.18</td><td>2026.10.04</td><td>2026.10.16</td></tr>
+                <tr><td data-ja="学校推薦型選抜" data-en="Recommendation">学校推薦型選抜</td><td>2026.11.02 - 11.16</td><td>2026.11.28</td><td>2026.12.08</td></tr>
+                <tr><td data-ja="一般選抜" data-en="General">一般選抜</td><td>2027.01.06 - 01.22</td><td>2027.02.05</td><td>2027.02.16</td></tr>
+                <tr><td data-ja="外国人留学生選抜" data-en="International">外国人留学生選抜</td><td>2026.12.01 - 12.18</td><td>2027.01.17</td><td>2027.01.29</td></tr>
+              </tbody>
+            </table>
+            <div class="project-note" data-ja="本サイトは架空の大学を題材とした学習用プロジェクトです。実在の大学・入試制度・所在地とは関係ありません。" data-en="This site is a learning project based on a fictional university. It is not related to any real university, admissions system, or location.">本サイトは架空の大学を題材とした学習用プロジェクトです。実在の大学・入試制度・所在地とは関係ありません。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="access" class="access reveal">
+      <div class="container">
+        <div class="section-title">
+          <span>ACCESS</span>
+          <h2 data-ja="アクセス" data-en="Access">アクセス</h2>
+        </div>
+        <div class="access-layout">
+          <div class="card map-card">
+            <div class="fiction-map" aria-label="Fictional campus map">
+              <div class="route-line" aria-hidden="true"></div>
+              <div class="water" aria-hidden="true"></div>
+              <div class="campus-pin" data-ja="印旛沼中央キャンパス" data-en="Inbanuma Central Campus">印旛沼中央キャンパス</div>
+              <div class="station-pin" data-ja="TIU Central Pier Station" data-en="TIU Central Pier Station">TIU Central Pier Station</div>
+            </div>
+          </div>
+          <div class="card">
+            <h3 data-ja="千葉県印旛沼中央キャンパス" data-en="Chiba Inbanuma Central Campus">千葉県印旛沼中央キャンパス</h3>
+            <p data-ja="Toshofu International Universityは、自然と水辺に囲まれた印旛沼中央エリアに位置する架空の国際大学です。実在の住所や建物名は使用していません。" data-en="Toshofu International University is a fictional international university located in the Inbanuma Central area, surrounded by nature and waterside scenery. No real address or building name is used.">Toshofu International Universityは、自然と水辺に囲まれた印旛沼中央エリアに位置する架空の国際大学です。実在の住所や建物名は使用していません。</p>
+            <div class="access-list">
+              <div class="access-item"><strong data-ja="最寄り" data-en="Nearest">最寄り</strong><span data-ja="TIU Central Pier Station（架空）" data-en="TIU Central Pier Station (fictional)">TIU Central Pier Station（架空）</span></div>
+              <div class="access-item"><strong data-ja="都心から" data-en="From central Tokyo">都心から</strong><span data-ja="約60分" data-en="About 60 minutes">約60分</span></div>
+              <div class="access-item"><strong data-ja="水上シャトル" data-en="Water shuttle">水上シャトル</strong><span data-ja="駅前ピアから約8分" data-en="About 8 minutes from the pier">駅前ピアから約8分</span></div>
+              <div class="access-item"><strong data-ja="周辺環境" data-en="Surroundings">周辺環境</strong><span data-ja="キャンパス周辺は自然保護エリアという架空設定です" data-en="The surrounding nature conservation area is a fictional setting">キャンパス周辺は自然保護エリアという架空設定です</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact reveal">
+      <div class="container">
+        <div class="section-title">
+          <span>CONTACT</span>
+          <h2 data-ja="お問い合わせ" data-en="Contact">お問い合わせ</h2>
+        </div>
+        <div class="contact-layout">
+          <div class="card">
+            <h3 data-ja="入試・資料請求に関するお問い合わせ" data-en="Admissions and Materials Inquiry">入試・資料請求に関するお問い合わせ</h3>
+            <p data-ja="フォームは表示確認用のUIです。送信処理は実装していませんが、GitHub Pages上でも画面内メッセージが表示されます。" data-en="This form is a UI mockup for display. Submission is not implemented, but a message appears on GitHub Pages.">フォームは表示確認用のUIです。送信処理は実装していませんが、GitHub Pages上でも画面内メッセージが表示されます。</p>
+          </div>
+          <form class="card contact-form" id="contactForm">
+            <div class="form-field">
+              <label for="name" data-ja="名前" data-en="Name">名前</label>
+              <input id="name" name="name" type="text" autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="email" data-ja="メールアドレス" data-en="Email">メールアドレス</label>
+              <input id="email" name="email" type="email" autocomplete="email">
+            </div>
+            <div class="form-field">
+              <label for="message" data-ja="問い合わせ内容" data-en="Message">問い合わせ内容</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+            <button class="btn primary" type="submit" data-ja="送信する" data-en="Send">送信する</button>
+            <div class="form-message" id="formMessage" aria-live="polite"></div>
+          </form>
         </div>
       </div>
     </section>
@@ -860,6 +1374,16 @@
       document.querySelectorAll("[data-ja][data-en]").forEach(el => {
         el.textContent = el.dataset[currentLang];
       });
+    });
+
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      formMessage.textContent = currentLang === "ja"
+        ? "送信機能は現在準備中です。"
+        : "The submission feature is currently being prepared.";
     });
 
     const observer = new IntersectionObserver((entries) => {
